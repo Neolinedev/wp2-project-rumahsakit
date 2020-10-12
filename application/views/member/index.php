@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">CI 3 x BS v4.5</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,13 +24,13 @@
                     <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Features</a>
                     <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link btn btn-primary" style="border-radius: 20px;" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                    <a class="nav-link" href="<?= base_url('auth/logout'); ?>" class="btn btn-primary">Logout</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <h1>Selamat datang <?= $this->session->userdata("nama"); ?> di website ini.</h1>
+    <h1>Selamat datang member <?= $this->session->userdata("nama"); ?> di website ini.</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laudantium, quibusdam totam exercitationem deserunt aut delectus ab! Quasi nulla minima, quam ipsum laudantium soluta nisi libero fugit vero, ducimus adipisci suscipit in totam a quis voluptates necessitatibus dolor magnam. Nesciunt eaque repellendus sapiente temporibus, dolor dicta. Nam ratione quas beatae omnis doloremque, nisi id, dolorem maxime quo illum quaerat cum aspernatur consectetur iusto doloribus ullam repudiandae commodi ad nostrum animi. Ad sed labore ab ex. Qui, dicta alias. Minima facere, sunt a dicta distinctio dignissimos doloribus voluptatum officia ipsam nisi magnam quo ut provident quibusdam excepturi iusto quis eaque ab.</p>
 
     <!-- Optional JavaScript -->
