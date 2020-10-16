@@ -23,14 +23,53 @@ class Auth extends CI_Controller
 
     public function proses_register()
     {
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|trim', [
-            'min_length' => 'Password minimal memiliki 8 karakter !'
-        ]);
-        $this->form_validation->set_rules('password2', 'Password2', 'required|trim|matches[password]', [
-            'matches' => 'Password tidak sama !'
-        ]);
+        // $this->form_validation->set_rules('nama', 'Nama', 'required');
+        // $this->form_validation->set_rules('username', 'Username', 'required');
+        // $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|trim', [
+        //     'min_length' => 'Password minimal memiliki 8 karakter !'
+        // ]);
+        // $this->form_validation->set_rules('password2', 'Password2', 'required|trim|matches[password]', [
+        //     'matches' => 'Password tidak sama !'
+        // ]);
+
+        $config = array(
+            array(
+                'field' => 'nama',
+                'label' => 'Nama',
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => 'Field nama wajib untuk diisi.'
+                ),
+            ),
+            array(
+                'field' => 'username',
+                'label' => 'Username',
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => 'Field username wajib untuk diisi.'
+                ),
+            ),
+            array(
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]',
+                'errors' => array(
+                    'required' => 'Field password wajib untuk diisi.',
+                    'min_length' => 'Password minimal memiliki 8 karakter.',
+                ),
+            ),
+            array(
+                'field' => 'password2',
+                'label' => 'Password2',
+                'rules' => 'required|matches[password]',
+                'errors' => array(
+                    'required' => 'Field konfirmasi password wajib untuk diisi.',
+                    'matches' => 'Konfirmasi password tidak sesuai'
+                ),
+            ),
+        );
+
+        $this->form_validation->set_rules($config);
 
         if ($this->form_validation->run() == FALSE) {
             $errors = $this->form_validation->error_array();

@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>HELLO BSI !</title>
+    <style>
+        .tombol {
+            border-radius: 40px;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +29,7 @@
                     <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Features</a>
                     <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link btn btn-primary" style="border-radius: 20px;" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                    <a class="nav-link btn btn-primary tombol" href="<?= base_url('auth/logout'); ?>">Logout</a>
                 </div>
             </div>
         </div>
