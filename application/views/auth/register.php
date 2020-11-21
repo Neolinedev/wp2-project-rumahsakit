@@ -11,6 +11,10 @@
 
     <title>Register Page</title>
     <style>
+        a {
+            text-decoration: none;
+        }
+
         .card {
             border-radius: 20px;
             border: none;

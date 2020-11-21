@@ -96,10 +96,32 @@ class Auth extends CI_Controller
 
     public function proses_login()
     {
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]', [
-            'min_length' => 'Password minimal memiliki 8 karakter.'
-        ]);
+        // $this->form_validation->set_rules('username', 'Username', 'required');
+        // $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]', [
+        //     'min_length' => 'Password minimal memiliki 8 karakter.'
+        // ]);
+
+        $config = array(
+            array(
+                'field' => 'username',
+                'label' => 'Username',
+                'rules' => 'required',
+                'errors' => array(
+                    'required' => 'Field username wajib diisi.'
+                )
+            ),
+            array(
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]',
+                'errors' => array(
+                    'required' => 'Field password wajib diisi',
+                    'min_length' => 'Password minimal harus memiliki 8 karakter'
+                )
+            )
+        );
+
+        $this->form_validation->set_rules($config);
 
         if ($this->form_validation->run() == FALSE) {
             $errors = $this->form_validation->error_array();
