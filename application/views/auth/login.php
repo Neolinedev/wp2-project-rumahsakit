@@ -16,11 +16,9 @@
         }
 
         .card {
+            margin-top: 100px;
             border-radius: 20px;
             border: none;
-        }
-
-        .card:hover {
             box-shadow: 4px 5px 12px 5px rgba(100, 100, 100, 0.30);
         }
 
@@ -37,19 +35,23 @@
         }
 
         .tombol {
+            background-color: #01677D;
             width: 80%;
             border-radius: 30px;
+            transition: 0.2s ease;
         }
 
         .tombol:hover {
+            background-color: transparent;
             text-transform: uppercase;
+            color: #01677D;
+            border: 1px solid #01677D;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="text-center">SELAMAT DATANG DI SENJA HOSPITAL</h1>
         <div class="row justify-content-center">
             <div class="col-lg-7 mt-4">
                 <div class="card">

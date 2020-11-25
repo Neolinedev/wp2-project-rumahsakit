@@ -16,10 +16,10 @@
         }
 
         .card {
+            margin-top: 100px;
             border-radius: 20px;
             border: none;
-            box-sizing: border-box;
-            box-shadow: 2px black;
+            box-shadow: 4px 5px 12px 5px rgba(100, 100, 100, 0.30);
         }
 
         .register {
@@ -35,8 +35,17 @@
         }
 
         .tombol {
+            background-color: #01677D;
             width: 80%;
             border-radius: 30px;
+            transition: 0.2s ease;
+        }
+
+        .tombol:hover {
+            background-color: transparent;
+            text-transform: uppercase;
+            color: #01677D;
+            border: 1px solid #01677D;
         }
     </style>
 </head>
