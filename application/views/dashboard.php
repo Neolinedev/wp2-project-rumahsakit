@@ -28,9 +28,9 @@
                     <a class="nav-link nav-item" href="#">Home</a>
                     <a class="nav-link nav-item" href="#">Cari Pasien</a>
                     <a class="nav-link nav-item" href="#">Pendaftaran Pasien</a>
-                    <a class="nav-link nav-item" href="#news-area">News & Event</a>
-                    <a class="nav-link nav-item" href="#main-services">Main Services</a>
-                    <a class="btn btn-primary sign-in-button" href="<?= base_url('auth/logout'); ?>">Log Out</a>
+                    <a class="nav-link nav-item" href="#news-area">Berita & Acara</a>
+                    <a class="nav-link nav-item" href="#main-services">Jenis Penyakit</a>
+                    <a class="btn btn-primary sign-in-button" href="<?= base_url('auth/logout'); ?>">Sign Out</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
     <!-- Image Slide -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Get work done <span>faster</span> <br> and <span>better</span> with us</h1>
+            <h1 class="display-4">Get well soon <span>faster</span> <br> and <span>better</span> with us</h1>
         </div>
     </div>
 
@@ -69,8 +69,8 @@
     <div class="news-area" id="news-area">
         <div class="container">
             <div class="news-header">
-                <span>News & Event</span>
-                <h2>Latest News</h2>
+                <span>Berita dan Acara</span>
+                <h2>Berita Terbaru</h2>
             </div>
             <div class="row">
                 <div class="col-md-4">
