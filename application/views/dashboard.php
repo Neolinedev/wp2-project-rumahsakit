@@ -26,8 +26,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link nav-item" href="#">Home</a>
-                    <a class="nav-link nav-item" href="#">Cari Pasien</a>
-                    <a class="nav-link nav-item" href="#">Pendaftaran Pasien</a>
+                    <a class="nav-link nav-item" href="#">Daftar Pasien</a>
+                    <a class="nav-link nav-item" href="<?= base_url('pasien/daftar_pasien'); ?>">Pendaftaran Pasien</a>
                     <a class="nav-link nav-item" href="#news-area">Berita & Acara</a>
                     <a class="nav-link nav-item" href="#main-services">Jenis Penyakit</a>
                     <a class="btn btn-primary sign-in-button" href="<?= base_url('auth/logout'); ?>">Sign Out</a>
