@@ -23,15 +23,6 @@ class Auth extends CI_Controller
 
     public function proses_register()
     {
-        // $this->form_validation->set_rules('nama', 'Nama', 'required');
-        // $this->form_validation->set_rules('username', 'Username', 'required');
-        // $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|trim', [
-        //     'min_length' => 'Password minimal memiliki 8 karakter !'
-        // ]);
-        // $this->form_validation->set_rules('password2', 'Password2', 'required|trim|matches[password]', [
-        //     'matches' => 'Password tidak sama !'
-        // ]);
-
         $config = array(
             array(
                 'field' => 'nama',
@@ -96,11 +87,6 @@ class Auth extends CI_Controller
 
     public function proses_login()
     {
-        // $this->form_validation->set_rules('username', 'Username', 'required');
-        // $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]', [
-        //     'min_length' => 'Password minimal memiliki 8 karakter.'
-        // ]);
-
         $config = array(
             array(
                 'field' => 'username',
@@ -141,15 +127,6 @@ class Auth extends CI_Controller
                 echo '<script>alert("Username yang Anda masukan salah.");window.location.href="' . base_url('auth/login') . '";</script>';
             } else {
                 if (password_verify($pass, $cek_login->password)) {
-                    // $data = [
-                    //     'role' => $user['role']
-                    // ];
-                    // if ($user['role'] == 'admin') {
-                    //     redirect('admin');
-                    // } else {
-                    //     redirect('member');
-                    // }
-                    // Mengecek username dan password apakah sama
                     $this->session->set_userdata('id', $cek_login->id);
                     $this->session->set_userdata('nama', $cek_login->nama);
                     $this->session->set_userdata('username', $cek_login->username);
@@ -160,31 +137,6 @@ class Auth extends CI_Controller
                 }
             }
         }
-
-        // $username = $this->input->post('username');
-        // $password = $this->input->post('password');
-        // $user = $this->db->get_where('user', ['username' => $username])->row_array();
-
-        // if ($user) {
-        //     if (password_verify($password, $user['password'])) {
-        //         $data = [
-        //             'username' => $user['username'],
-        //             'role' => $user['role']
-        //         ];
-        //         $this->session->set_userdata($data);
-        //         if ($user['role'] == 'admin') {
-        //             redirect('admin');
-        //         } else {
-        //             redirect('member');
-        //         }
-        //     } else {
-        //         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Salah !</div>');
-        //         redirect('auth/login');
-        //     }
-        // } else {
-        //     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username Salah!</div>');
-        //     redirect('auth/login');
-        // }
     }
 
     public function logout()

@@ -13,8 +13,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Form Pendaftaran Pasien</title>
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        h1 {
+            margin: 10px 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #01677D;
+        }
+
         .button-daftar {
             width: 120px;
             border: none !important;
@@ -27,8 +41,7 @@
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
-
+    <h1>SILAHKAN MELAKUKAN PENDAFTARAN</h1>
     <div class="container">
         <?php
         $errors = $this->session->flashdata('errors');
@@ -44,30 +57,28 @@
                 </div>
             </div>
         <?php } ?>
-        <form method="POST" class="form-daftar-pasien" action="<?= base_url('pasien/proses_daftar'); ?>">
-            <div class="form-group">
-                <label for="kd_pasien">Kode Pasien</label>
-                <input type="text" class="form-control" style="width: 50%;" id="kd_pasien" name="kd_pasien" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="nm_pasien">Nama Pasien</label>
-                <input type="text" class="form-control" style="width: 50%;" id="nm_pasien" name="nm_pasien" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="tgl_lahir">Tanggal Lahir</label>
-                <input type="text" class="form-control" style="width: 50%;" id="tgl_lahir" name="tgl_lahir" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="alm_pasien">Alamat Pasien</label>
-                <input type="text" class="form-control" style="width: 50%;" id="alm_pasien" name="alm_pasien" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="telp_pasien">Telepon Pasien</label>
-                <input type="text" class="form-control" style="width: 50%;" id="telp_pasien" name="telp_pasien" placeholder="">
-            </div>
-            <button class="btn btn-primary button-daftar" type="submit">Simpan</button>
-            <a href="<?= base_url('dashboard'); ?>" class="btn btn-primary button-daftar">Kembali</a>
-        </form>
+        <div class="container container-daftar">
+            <form method="POST" class="form-daftar-pasien" action="<?= base_url('pasien/proses_daftar'); ?>">
+                <div class="form-group">
+                    <label for="nm_pasien">Nama Pasien</label>
+                    <input type="text" class="form-control" style="width: 50%;" id="nm_pasien" name="nm_pasien" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="tgl_lahir">Tanggal Lahir</label>
+                    <input type="text" class="form-control" style="width: 50%;" id="tgl_lahir" name="tgl_lahir" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="alm_pasien">Alamat Pasien</label>
+                    <input type="text" class="form-control" style="width: 50%;" id="alm_pasien" name="alm_pasien" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="telp_pasien">Telepon Pasien</label>
+                    <input type="text" class="form-control" style="width: 50%;" id="telp_pasien" name="telp_pasien" placeholder="">
+                </div>
+                <button class="btn btn-primary button-daftar" type="submit">Simpan</button>
+                <a href="<?= base_url('dashboard'); ?>" class="btn btn-primary button-daftar">Kembali</a>
+            </form>
+        </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

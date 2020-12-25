@@ -12,4 +12,15 @@ class pasienModel extends CI_Model
     {
         return $this->db->get('pasien')->result_array();
     }
+
+    public function getPasienByKd($kd_pasien)
+    {
+        return $this->db->get_where('pasien', ['kd_pasien' => $kd_pasien])->row_array();
+    }
+
+    public function hapusPasien($data, $table)
+    {
+        $this->db->where($data);
+        $this->db->delete($table);
+    }
 }

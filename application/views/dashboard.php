@@ -14,6 +14,119 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <title>Project UAS</title>
+    <style>
+        .info {
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            margin-top: -100px;
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 70px;
+        }
+
+        .info img {
+            background-color: #ffffff;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .info p {
+            font-size: 14px;
+            color: #878686;
+            margin-top: -5px;
+            font-weight: 200;
+        }
+
+        .dokter-pages {
+            max-width: 1134px;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 60px;
+        }
+
+        .dokter-pages-title span {
+            display: block;
+            margin-top: 70px;
+            margin-bottom: 5px;
+            color: #01677D;
+            font-size: 17px;
+        }
+
+        .dokter-pages-title h2 {
+            margin-bottom: 0;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .dokter-box {
+            /* height: calc(100% - 30px); */
+            width: 290px;
+            text-align: center;
+            margin: 20px 30px;
+            background-color: #ffffff;
+            box-shadow: 1px 4px 17px 0 rgba(0, 0, 0, 0.12);
+            padding: 25px;
+            border-radius: 10px;
+            transition: .5s;
+            position: relative;
+            top: 0;
+        }
+
+        .dokter-box:hover {
+            color: #ffffff !important;
+            top: -10px;
+            cursor: pointer;
+        }
+
+        .dokter-box .dokter-image {
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .dokter-box .dokter-image img {
+            display: inline-block !important;
+            width: 120px !important;
+            border-radius: 50%;
+            height: auto;
+        }
+
+        .dokter-box .dokter-content {
+            margin-top: 22px;
+        }
+
+        .dokter-box .dokter-content h3 {
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .dokter-box .dokter-content h3 a {
+            display: inline-block !important;
+            transition: .5s;
+            outline: 0 !important;
+            text-decoration: none;
+            color: #01677D;
+        }
+
+        .dokter-box .dokter-content span {
+            font-size: 0.9rem;
+            font-weight: 300 !important;
+            margin-top: 6px;
+            display: block;
+            color: #01677D !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,40 +138,43 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link nav-item" href="#">Home</a>
-                    <a class="nav-link nav-item" href="#">Daftar Pasien</a>
+                    <a class="nav-link nav-item" href="<?= base_url('dashboard'); ?>">Home</a>
+                    <a class="nav-link nav-item" href="<?= base_url('pasien/index'); ?>">Daftar Pasien</a>
                     <a class="nav-link nav-item" href="<?= base_url('pasien/daftar_pasien'); ?>">Pendaftaran Pasien</a>
                     <a class="nav-link nav-item" href="#news-area">Berita & Acara</a>
-                    <a class="nav-link nav-item" href="#main-services">Jenis Penyakit</a>
-                    <a class="btn btn-primary sign-in-button" href="<?= base_url('auth/logout'); ?>">Sign Out</a>
+                    <a class="nav-link nav-item" href="#">Jenis Penyakit</a>
+                    <a class="btn btn-primary sign-in-button" href="<?= base_url('auth/login'); ?>">Sign In</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Image Slide -->
+    <!-- Image Jumbotron -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Get well soon <span>faster</span> <br> and <span>better</span> with us</h1>
         </div>
     </div>
 
-    <!-- Search -->
+    <!-- Info -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-10 search">
+            <div class="col-10 info">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <span>Temukan Data Pasien</span>
-                        <p>Cari data pasien untuk kemudahan dalam menjenguk.</p>
+                    <div class="col-lg">
+                        <img src="<?= base_url('assets/img/doctor.png'); ?>" alt="Doctor" class="float-left">
+                        <h4>Dokter Profesional</h4>
+                        <p>Selalu siap membantu</p>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="form-group search_pasien">
-                            <input type="text" class="form-control" id="inputnamapasien" placeholder="Masukkan Kode Pasien..">
-                        </div>
+                    <div class="col-lg">
+                        <img src="<?= base_url('assets/img/employee.png'); ?>" alt="Services" class="float-left">
+                        <h4>Siaga 24 Jam</h4>
+                        <p>Selalu siaga kapanpun</p>
                     </div>
-                    <div class="col-lg-6">
-                        <button class="tombol">Search</button>
+                    <div class="col-lg">
+                        <img src="<?= base_url('assets/img/hospital.png'); ?>" alt="Hospital" class="float-left">
+                        <h4>Banyak Cabang</h4>
+                        <p>Datangi sesuai tempat tinggal anda</p>
                     </div>
                 </div>
             </div>
@@ -250,6 +366,33 @@
         </div>
     </div>
 
+    <!-- Daftar Dokter -->
+    <div class="dokter-pages" id="dokter-pages">
+        <div class="container">
+            <div class="dokter-pages-title">
+                <span>Daftar Dokter</span>
+                <h2>Dokter Profesional Kami</h2>
+            </div>
+            <div class="row justify-content-center" id="show-data">
+                <?php foreach ($dokter as $dok) : ?>
+                    <div class="col-md-3 dokter-box">
+                        <div class="dokter-image">
+                            <img src="<?= base_url('assets/img/doc-male.png'); ?>" alt="doctor-male">
+                        </div>
+                        <div class="card-body dokter-content">
+                            <h3><a href="#"><?= $dok['nm_dokter']; ?></a></h3>
+                            <span><i style="font-style: normal;"><?= $dok['spesialis']; ?></i></span>
+                            <span class="text-success">
+                                <p><i class="fas fa-phone"></i> <?= $dok['telp_dokter']; ?></p>
+                                <p><i class="fas fa-home"></i> <?= $dok['alm_dokter']; ?></p>
+                            </span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
         <div class="container">
@@ -340,9 +483,9 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

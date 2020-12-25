@@ -50,9 +50,8 @@
     </style>
 </head>
 
-<body class="bg-primary">
+<body>
     <div class="container">
-        <h1 class="text-center">SELAMAT DATANG DI SENJA HOSPITAL</h1>
         <div class="row justify-content-center">
             <div class="col-lg-7 mt-4">
                 <div class="card">
