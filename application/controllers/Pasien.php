@@ -8,6 +8,7 @@ class Pasien extends CI_Controller
     {
         parent::__construct();
         $this->cek_login();
+        $this->load->library('pagination');
         $this->load->helper('url');
         $this->load->model('pasienModel');
         $this->load->model('obatModel');
@@ -17,8 +18,47 @@ class Pasien extends CI_Controller
 
     public function index()
     {
+        // Pagination
+        $config['base_url'] = 'http://localhost/wp2/pasien/index';
+        $config['total_rows'] = $this->pasienModel->countAll();
+        $config['per_page'] = 8;
+
+        // Styling pagination
+        $config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link'] = 'First';
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link'] = 'Last';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        // Initialize
+        $this->pagination->initialize($config);
+
         $data['title'] = 'Daftar Pasien';
-        $data['pasien'] = $this->pasienModel->getAllPasien();
+
+        $data['start'] = $this->uri->segment(3);
+        $data['pasien'] = $this->pasienModel->getPasien($config['per_page'], $data['start']);
+
         $this->load->view('layout/header', $data);
         $this->load->view('pasien/index', $data);
     }
@@ -58,21 +98,6 @@ class Pasien extends CI_Controller
         $data['title'] = 'Form Pendaftaran Pasien';
         $this->load->view('pasien/v-form-pasien');
     }
-
-    // public function pasienDummy()
-    // {
-    //     for ($i = 100; $i < 1000; $i++) {
-    //         $data = [
-    //             "kd_pasien" => $i,
-    //             "tgl_lahir" => "tgl_lahir ke. " . $i,
-    //             "nm_pasien" => "nm_pasien ke. " . $i,
-    //             "alm_pasien" => "alm_pasien ke. " . $i,
-    //             "telp_pasien" => "08133456476 " . $i
-    //         ];
-
-    //         $this->pasienModel->daftar("pasien", $data);
-    //     }
-    // }
 
     public function proses_daftar()
     {

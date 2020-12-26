@@ -23,4 +23,14 @@ class pasienModel extends CI_Model
         $this->db->where($data);
         $this->db->delete($table);
     }
+
+    public function getPasien($limit, $start)
+    {
+        return $this->db->get('pasien', $limit, $start)->result_array();
+    }
+
+    public function countAll()
+    {
+        return $this->db->get('pasien')->num_rows();
+    }
 }

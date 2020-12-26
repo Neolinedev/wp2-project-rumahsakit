@@ -11,11 +11,10 @@
             <th scope="col">Aksi</th>
         </tr>
     </thead>
-    <?php $i = 1; ?>
     <?php foreach ($pasien as $psn) : ?>
         <tbody>
             <tr>
-                <th scope="row"><?= $i; ?></th>
+                <th scope="row"><?= ++$start; ?></th>
                 <td><?= $psn['kd_pasien']; ?></td>
                 <td><?= $psn['nm_pasien']; ?></td>
                 <td><?= $psn['tgl_lahir']; ?></td>
@@ -23,11 +22,11 @@
                 <td><?= $psn['alm_pasien']; ?></td>
                 <td><?= $psn['tgl_daftar']; ?></td>
                 <td>
-                    <a href="<?= base_url(''); ?>/pasien/pembayaran/<?= $psn['kd_pasien']; ?>" class="btn btn-info">Bayar</a>
-                    <a href="<?= base_url(''); ?>/pasien/hapus/<?= $psn['kd_pasien']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data pasien ini ?')">Hapus</a>
+                    <a href="<?= base_url(''); ?>pasien/pembayaran/<?= $psn['kd_pasien']; ?>" class="btn btn-info">Bayar</a>
+                    <a href="<?= base_url(''); ?>pasien/hapus/<?= $psn['kd_pasien']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data pasien ini ?')">Hapus</a>
                 </td>
             </tr>
         </tbody>
-        <?php $i++; ?>
     <?php endforeach; ?>
 </table>
+<?= $this->pagination->create_links(); ?>
